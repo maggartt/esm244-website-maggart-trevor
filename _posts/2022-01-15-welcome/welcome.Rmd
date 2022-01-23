@@ -1,0 +1,49 @@
+---
+title: "Right-Wing Populism in the Age of Climate Change"
+description: |
+  How right-wing populism threatens climate policy across the globe.
+author:
+  - name: Trevor Maggart
+date: 2022-01-15
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+In September of 2020, the largest right-wing nationalist party of Germany—the Alternative for Germany (Alternative feur Deutschland; AfD)—broke from scientific consensus and called for parliament to end all current major actions on climate change.5 Promoting a reversal of Germany’s divestment from nuclear power, the AfD has claimed CO2 emissions pose no threat to the environment and have demanded Germany backs out of the Paris Climate Agreement as well as the European Green Deal.5
+	In contrast to US politics where climate denialism has pervaded the GOP for nearly two decades, skepticism and outright denial has, until recently, remained on the fringes of politics in Europe.1,4 But as right-wing populism rises globally, parties such as the AfD have gained traction among voters. Centering anti-immigration rhetoric as its platform, the AfD exploited national fears around immigration and assimilation in 2015 and captured 12.6% of parliamentary seats in 2017.5
+	And these issues extend beyond Germany. A 2019 study by German think tank Adelphi identified 21 right-wing populist parties and their positions on climate change. The results were illuminating: seven parties denied climate science, eleven parties displayed inconsistent communication or none at all, and only two parties explicitly supported the consensus on climate change.3 As these parties gain influence, it is worth questioning: is the future of climate policy at risk?
+
+
+The Changing Political Landscape
+	Historically, political parties across the spectrum in Europe have implemented a degree of climate policy into their platforms. The capacity at which this happens among right-wing parties varies across the continent—parties in Poland advocate for carbon capture and storage to transition to ‘clean’ coal while some German parties, such as the AfD, advocate for extensive nuclear energy programs to support energy needs.1,3,5
+	It is widely accepted that parties in Europe have had to integrate climate policy into their platform to be taken seriously in the political theater.1,3 Subsequently, two questions arise: how genuine are these policies and is this still even the case?
+	Robert Ladrecht, Professor of European Politics at Keele University, UK, argues they are primarily performative on the right. Specifically, evidence shows it is necessary for these parties to engage with climate policy in some capacity if they want to attract younger voters.2 
+	In France, the radical right-wing party—the National Front (Front National; FN)—established a “New Ecology Group” in 2014, but by 2017 the climate and energy policies of the group were essentially a non-factor by the time of the election.1 Likewise, the AfD claims to campaign for low-cost, sustainable electricity, but inevitably the critical issue driving their campaign is immigration.1 
+	As Elizabeth Jeffries elaborates in her article, “Nationalist Advance,” many radical right-wing parties adopt a sort of “establishment hue” to mask their nationalist populist agenda. Co-opting climate policy is one such method to which this end is achieved. And the rise of these parties can have dire consequences on the future of the climate.1
+
+
+Climate Policy is at Risk
+	As right-wing politics continue to rise globally, policies addressing climate change are at risk of rollback. The presence of these far-right parties within European parliaments can have disastrous consequences for governments attempting to take drastic action to curb greenhouse gas emissions.5
+Moreover, as this political ideology continues to spread, it may continue to co-opt left-wing policies to attract more constituents to the right. It may not be uncommon to see right-wing groups begin to adopt a protectionist approach to agriculture hoping to swing farming votes to their side through nationalist rhetoric.3
+If we are to fight against the climate crisis and hope for a more just future for all, we must address the rise of right-wing ideology that pervades globally. To start, we should address the failings of our education systems to adequately eliminate racist, anti-immigrant rhetoric among the youth. Even among right-wing youth we see concern for climate change.2 If we can harness this concern, we may be able to help these impressionable children to a more just future.
+Inevitably, we cannot afford to view environmentalism in a vacuum, and more importantly, we must understand the intersectional intricacies of these issues—climate change, income inequality, etc.—as we continue to grapple with these complex systems.
+
+
+Works Cited
+1. Jeffries, Elisabeth. “Nationalist Advance.” Nature Climate Change, vol. 7, no. 7, 2017, pp. 469–71. Crossref, doi:10.1038/nclimate3334.
+
+2. Nasr, Joseph. “Save Coal, Lose Youth Vote? Far-Right German Party Faces Climate Policy Revolt.” Reuters, 30 May 2019, www.reuters.com/article/us-germany-afd/save-coal-lose-youth-vote-far-right-german-party-faces-climate-policy-revolt-idUSKCN1SZ1KD.
+
+3. Schaller, Stella and Carius, Alexander. “CONVENIENT TRUTHS Mapping climate agenda of right-wing populist parties in Europe.” adelphi, 26 Feb. 2019, https://www.adelphi.de/en/publication/convenient-truths.
+
+4. Shoshan, Nitzan. “Homeland, Far-Right Nationalism, and Environmentalism beyond Trump.” Anthropology Now, vol. 13, no. 1, 2021, pp. 44–48. Crossref, doi:10.1080/19428200.2021.1903523.
+
+5. Wehrmann, Benjamin. “Germany’s Right-Wing AfD Calls for End to All Climate Action Efforts.” Clean Energy Wire, 17 Sept. 2020, www.cleanenergywire.org/news/germanys-right-wing-afd-calls-end-all-climate-action-efforts.
+
+
+

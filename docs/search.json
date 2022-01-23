@@ -1,0 +1,34 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-01-23T08:54:45-08:00"
+    },
+    {
+      "path": "blog.html",
+      "title": "Writing",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-01-23T08:54:46-08:00"
+    },
+    {
+      "path": "index.html",
+      "title": "<span style=\"color:white\">Trevor Maggart<br><span class = \"smaller\">he | him | his<\/span><\/span>",
+      "author": [],
+      "contents": "\n\n          \n          \n          Trevor Maggart\n          \n          \n          Home\n          Writing\n          ☰\n          \n          \n      \n        \n          \n            \n              \n            \n              Trevor Maggarthe | him | his\n            \n            \n              \n                \n                    \n                      \n                        LinkedIn\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Email\n                      \n                    \n                  \n                                    \n                    \n                      \n                        GitHub\n                      \n                    \n                  \n                                    \n                    \n                      \n                        Bandcamp\n                      \n                    \n                  \n                                  \n            \n          \n        \n        \n        \n          \n            \n            Bio\n            I am a master’s student studying environmental science and management at the Bren School at the University of California - Santa Barbara. I specialize in water resource management and am passionate about helping create self-sufficient, resilient communities that transcend hierarchical structures to create a more just future for all. In addition, I am fascinated by noise and love to create ambient music.\n            \n            \n            Education\n            Master’s of Environmental Science & Management - UC Santa Barbara (Expected 2023)Bachelor of Arts in Geology - Macalester College 2016\n            \n          \n        \n      \n    \n\n    \n      \n        \n          \n            \n              \n            \n              Trevor Maggarthe | him | his\n            \n            \n              \n                \n                                    \n                    \n                      LinkedIn\n                    \n                  \n                                    \n                    \n                      Email\n                    \n                  \n                                    \n                    \n                      GitHub\n                    \n                  \n                                    \n                    \n                      Bandcamp\n                    \n                  \n                                  \n              \n            \n            \n              \n              Bio\n              I am a master’s student studying environmental science and management at the Bren School at the University of California - Santa Barbara. I specialize in water resource management and am passionate about helping create self-sufficient, resilient communities that transcend hierarchical structures to create a more just future for all. In addition, I am fascinated by noise and love to create ambient music.\n              \n              \n              Education\n              Master’s of Environmental Science & Management - UC Santa Barbara (Expected 2023)Bachelor of Arts in Geology - Macalester College 2016\n              \n            \n        \n      \n    \n\n    \n    \n    ",
+      "last_modified": "2022-01-23T08:54:46-08:00"
+    },
+    {
+      "path": "music.html",
+      "title": "Music",
+      "author": [],
+      "contents": "\n\n\n\n.container {\n  position: relative;\n  width: 50%;\n}\n\n.image {\n  opacity: 1;\n  display: block;\n  width: 100%;\n  height: auto;\n  transition: .5s ease;\n  backface-visibility: hidden;\n}\n\n.middle {\n  transition: .5s ease;\n  opacity: 0;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  text-align: center;\n  text-color: #FFFFFF;\n  font-size: 16px;\n  padding: 16px 32px;\n}\n\n.container:hover .image {\n  opacity: 0.3;\n}\n\n.container:hover .middle {\n  opacity: 1;\n}\n\n\n \n    Experiments in Tape\n\n\n\n \n    Themes for Self-Loathing\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "last_modified": "2022-01-23T08:54:47-08:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

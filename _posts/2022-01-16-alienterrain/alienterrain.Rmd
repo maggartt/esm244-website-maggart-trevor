@@ -1,0 +1,98 @@
+---
+title: "On Alien Terrain"
+description: |
+  Reflecting on my time in Iceland.
+author:
+  - name: Trevor Maggart
+    url: {}
+date: 2022-01-16
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+The summer prior to my senior year of college, I found myself on a red-eye flight from
+New York City to Reykjav k, Iceland. At the time, I felt acutely aware of the privilege I had had to
+travel throughout my youth. I had grown up in Japan and my father had seized any available
+opportunity to take my family traveling—I like to imagine he was fulfilling a lingering childhood
+desire to see the world. These were new experiences he had never had as a farm-boy from
+Indiana, surrounded by oceans of monoculture corn. Nonetheless, even with these travels
+behind me, I sensed within myself an uncertainty of what was to come. And as the plane began
+its descent into Reykjav k, I found myself captivated by the vast unadulterated landscape, by the
+minute peculiarities of that unknown terrain.
+
+Reflecting now, it seems odd that I was so astonished when I first laid eyes on Iceland.
+After all, the primary purpose of the trip was research: I was there with a group of peers and
+professors to analyze niche aspects of the landscape. I had studied intensely the geologic history
+of the island and had even expounded often before arriving that, “Iceland is the most
+geologically unique place on Earth.” And it was true, in a sense. Nowhere else on Earth could
+one find a locality where the Mid-Atlantic spreading ridge met a mantle plume. In essence,
+there was nowhere else that experienced the sheer magnitude of voluminous lava shooting out
+from the depths of our planet.
+
+And yet, the environmental manifestations of this unique geologic setting suddenly
+appeared as if I had been lulled into a dreamlike state by the gentle reverberations of the
+plane's engine. I felt, as I believe we all have, that satisfying sensation where prior knowledge
+meets a new sensory experience and meshes into a sort of fresh understanding. It was as if all
+the intensive studying I had done prior had allowed me to see only a reflection of the true
+Iceland, as if I had been staring into a shallow sea. But now, the tide had subsided and I
+understood with a new clarity the intricacies of what existed below.
+
+Upon landing, my cohort and I rushed through the elongated hallways known to airports
+everywhere as the morning light poured through the windows and danced softly on our skin.
+We passed airport shops replete with exorbitantly priced wool sweaters, tourists frantically
+searching for their gates like ants on food scraps, and what I remember to be a surprising
+amount of fathers with strollers. In retrospect, this last part is surely biased in my memory.
+However, I recall—with an almost certain exaggeration—an abundant number of dads caring for
+their children, no women in sight. And this was not contained solely to this one instance. During
+my time there, it seemed to me a universal truth that dads and their children existed in joyous
+tandem as an almost omnipresent force across the island. Of course, the idea that this may be a
+result of Iceland’s robust paternity leave policies did not enter my mind at the time. In fact, the
+sight of these fathers with their kids was so jarring to my lived experience that the situation felt
+almost comically more foreign to me than the country’s alien landscape.
+
+Alas, after a quick drive, we ended up at the University of Reykjav k. Our rush had been
+pointless. The professor we were to meet had shown up late, his face a confusing mixture of
+stern frustration and genuine regret. He apologized for his delay and informed us he had just
+returned from speaking on national radio. Apparently, a new silica factory was in the process of
+being built on an unstable fault line, threatening the lives of any future employees. He had gone
+on record as one of the top geologists on the island to express his dissatisfaction at the new
+construction. From what I gathered, the location of the factory was chosen for both its
+proximity to water and to save costs. This was funny to me because it was something I
+immediately understood, something for once that did not feel foreign. Iceland—comparable to
+the Scandinavian countries idealized by the American Left—had, in my mind, fallen a rung on
+the ladder of social progress. Sure, it was still years ahead in many regards—the USA can’t even
+achieve comprehensive maternity leave, much less paternity leave—but neoliberalism had once
+again shown that even in the most progressive societies there is still a dollar amount that can be
+attached to each human life.
+
+What I remember most from that trip were the bookends, driving the coast in the early
+days and seeing the magnificent countryside. I remember flat mountains caused by volcanoes
+erupting under glaciers, not dissimilar to when a child mushes the pointed end of a crayon to
+flatten the tip; indefinite rolling hills suddenly broken by bluffs cut sharply by mysterious
+out-of-place waterfalls; otherworldly terrains of molten black rock with steam shooting out of
+every pore as if the Earth was fuming from its ears. It is a landscape so magical it is hard not to
+examine it and evoke the myths of Norse gods—as if J rmungandr, the Midgard serpent, may
+appear circling the island, bringing upon the end of the world.
+
+And yet, even a place so breathtaking was incapable of neutralizing the brutal
+mundaneness of daily life, and, for most, daily life means work. This is reality. The meat of my
+trip revolved around early mornings, drives to our field site, and taking painstaking, meticulous
+measurements of niche geologic features of volcanic rocks. To me, it was disenchanting. The
+vast majority of the world would benefit nothing from my work and it was hard to glean any
+importance from what I was doing. Ultimately, the days were uneventful, apart from one
+particularly comical incident of my friend having to replace her tampon within a ‘spatter
+cone’—a sort of mini-volcano created by mysterious processes.
+
+In the end, I spent but two weeks in Iceland, and I will never forget them. Although most
+of that time was spent conducting day-to-day research, the sheer magnificence of Iceland’s
+foreign landscape entranced me in a way I still long for today. Often, the perfunctory nature of
+our human lives beats us down so viciously that even with complete focus, we can only muster
+a sort of performance of ourselves. Like the moon, this sensation wanes and waxes, but for me,
+it can often feel inescapable. In Iceland, in certain silences, in certain places, I was able to
+escape as I left the world I knew behind and stepped foot on alien terrain.

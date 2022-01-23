@@ -1,0 +1,14 @@
+name: "."
+title: "Trevor Maggart"
+primary-background-color: "#1A1A2E"
+theme: postcards.css
+description: |
+  mfeo
+output_dir: "docs"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "Writing"
+      href: blog.html
+output: distill::distill_article

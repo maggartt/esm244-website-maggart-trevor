@@ -1,0 +1,89 @@
+---
+title: "Quantifying the Collapse of Civilization"
+description: |
+  A look into the number mania that drives climate science and leads to inaction.
+author:
+  - name: Trevor Maggart
+    url: {}
+date: 2022-01-15
+output:
+  distill::distill_article:
+    self_contained: false
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+  When environmental activist and academic Naomi Klein was asked to speak at a tribute
+to the late, great professor Edward Said, she artfully critiqued the incompetency of Western
+Society’s ability to address the climate crisis. With the tactful characteristic of someone
+intimately aware of another’s work, Klein adopted Said’s postcolonial theory of the “other” and
+used it to expose the failings of Western exceptionalism that were so blatantly on display at the
+2015 Paris Climate Conference. “The Paris Agreement commits to keeping warming below 2 C,”
+she reminded, adding, “it’s a target that is beyond reckless.” (Klein, 2016). And she was right.
+The African delegates at the conference protested, eventually receiving a simple pity clause that
+emphasized countries (primarily white and Western) will pursue “efforts to limit the
+temperature increase to 1.5 C” as Klein pointed out (Klein, 2016).
+
+  Of course, the vast majority of these countries had no plan to actually execute this
+agreement. As watchdog Climate Action Tracker (CAT) recently reported, not a single G20
+country is on pace to uphold its end of the bargain (Kottasov , 2021). Yet, even if they were, it is
+still worth a closer examination of all that is left unsaid within that 0.5 C differential
+‘recommended’ in the agreement.
+
+  To many, the climate crisis cannot simply be reduced to numerical modeling. Behind the
+constant barrage of statistics advertised to us, there are complex ecosystems on the brink of
+extinction; trees old enough to have lived through a hundred wars waiting to be reduced to a
+suburban household centerpiece; and entire cultures on the verge of being relegated to a brief
+paragraph in an obscure graduate textbook—assuming academia survives the changes to come.
+There is, simply, an interconnectedness within our world that even the most sophisticated
+scientific instruments will certainly never be able to measure.
+So, how did we arrive at this moment in time? What caused us to resign ourselves to a
+sort of number mania? A friend of mine theorizes it’s about control. By quantifying the natural
+world around us, we hide ourselves behind a facade of understanding and are therefore able to
+assuage our anxieties—anxieties that manifest due to an uncertainty about the future. But what
+does it mean for the Earth to heat 2 C? How about 3 C? Or even 5 C? According to the infinite
+infographics that are reposted into oblivion until the already oversimplified messages are lost all
+together: it could be the difference between uncomfortably hot summers or mass death.
+
+  I am sure you can picture it as you scroll through Instagram: So You Want to Talk About
+the oncoming collapse of civilization brought on by our fragile democratic structures, increased
+water scarcity, crop failure, and the rise of police surveillance reminiscent of 1930s Germany?
+The irony here, of course, is that no one does. When the laptops are shut and the phones
+locked, those brave enough to unplug will hear in the stark silence the reverberations of beer
+bottles clanking, pill bottles being popped, and coffee machines sputtering out the remaining
+drops of hot liquid. The others are resigned to a worse fate: endless stimulation among the soft
+thuds of downward flicks resulting in the same four words: “You’re All Caught Up.”
+
+  And yet, even within this almost manufactured indifference toward a crisis that appears
+to us on all fronts, there remains hope. Many hear the ubiquitous phrase “71% of carbon
+emissions are caused by 100 companies,” and choose to take action amidst those who resign
+themselves to a state of despair. You need not look farther than the monumental rise of the
+Sunrise Movement to see the powerful impact created by younger generations demanding
+change. These youths know the power to create change lies within people and the relationships
+that bind them together.
+
+  Moreover, this obsession with emissions might be the most insidious numerical trap of
+all. It is easy to see how entire populations are brainwashed into believing global warming is
+fake when they are constantly being barraged with incomprehensible figures. But, take the most
+ardent climate-denying hunter to the desolate forests they roamed as a child and even they may
+admit something must be done.
+
+  So it is here, ironically, where the truth lies—within the old adage lingering in the
+background: think global, act local. If we hope to preserve the future, we must first and
+foremost think of our relationships with each other and with the land. No amount of numerical
+data will convince the disenchanted to take a stand, but show them what contaminates their
+children's drinking water and see a fire light in their eyes. We cannot quantify the impact of a
+million small actions taken on multiple fronts, but a million small actions is exactly what we
+need to move toward a better world.
+
+Works Cited
+
+1. Klein, N. (2016, June). Let Them Drown: The Violence of Othering in a Warming World. London
+Review of Books. https://www.lrb.co.uk/the-paper/v38/n11/naomi-klein/let-them-drown
+
+2. Kottasov , I. (2021, September 16). Not a single G20 country is in line with the Paris Agreement
+on climate, analysis shows. CNN.
+https://edition.cnn.com/2021/09/15/world/climate-pledges-insufficient-cat-intl/index.html
+
+
