@@ -9,6 +9,10 @@ navbar:
   right:
     - text: "Home"
       href: index.html
+    - text: "About Me"
+      href: about.html
     - text: "Writing"
       href: blog.html
+    - text: "CV"
+      href: "Maggart_Trevor_Bren_Resume.pdf"
 output: distill::distill_article
