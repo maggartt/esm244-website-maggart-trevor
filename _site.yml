@@ -11,7 +11,7 @@ navbar:
       href: index.html
     - text: "About Me"
       href: about.html
-    - text: "Writing"
+    - text: "Projects"
       href: blog.html
     - text: "CV"
       href: "Maggart_Trevor_Bren_Resume.pdf"

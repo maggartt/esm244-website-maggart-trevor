@@ -87,38 +87,38 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-<title>Trevor Maggart: Quantifying the Collapse of Civilization</title>
+<title>Trevor Maggart: Uncovering the secrets of wine: using principal components analysis to visualize predictors of wine quality</title>
 
-<meta property="description" itemprop="description" content="A look into the number mania that drives climate science and leads to inaction."/>
+<meta property="description" itemprop="description" content="This post uses principal components analysis to explore what predictor variables affect wine quality."/>
 
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2022-01-15"/>
-<meta property="article:created" itemprop="dateCreated" content="2022-01-15"/>
+<meta property="article:published" itemprop="datePublished" content="2022-02-21"/>
+<meta property="article:created" itemprop="dateCreated" content="2022-02-21"/>
 <meta name="article:author" content="Trevor Maggart"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Trevor Maggart: Quantifying the Collapse of Civilization"/>
+<meta property="og:title" content="Trevor Maggart: Uncovering the secrets of wine: using principal components analysis to visualize predictors of wine quality"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="A look into the number mania that drives climate science and leads to inaction."/>
+<meta property="og:description" content="This post uses principal components analysis to explore what predictor variables affect wine quality."/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Trevor Maggart"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary"/>
-<meta property="twitter:title" content="Trevor Maggart: Quantifying the Collapse of Civilization"/>
-<meta property="twitter:description" content="A look into the number mania that drives climate science and leads to inaction."/>
+<meta property="twitter:title" content="Trevor Maggart: Uncovering the secrets of wine: using principal components analysis to visualize predictors of wine quality"/>
+<meta property="twitter:description" content="This post uses principal components analysis to explore what predictor variables affect wine quality."/>
 
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Quantifying the Collapse of Civilization"]},{"type":"character","attributes":{},"value":["A look into the number mania that drives climate science and leads to inaction."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Trevor Maggart"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["2022-01-15"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","output","editor_options","date"]}},"value":[{"type":"character","attributes":{},"value":["Uncovering the secrets of wine: using principal components analysis to visualize predictors of wine quality"]},{"type":"character","attributes":{},"value":["This post uses principal components analysis to explore what predictor variables affect wine quality."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Trevor Maggart"]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article","html_document"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["code_folding","theme","toc","toc_depth","toc_float","collapsed","smooth_scroll"]}},"value":[{"type":"character","attributes":{},"value":["hide"]},{"type":"character","attributes":{},"value":["postcards.css"]},{"type":"logical","attributes":{},"value":[true]},{"type":"integer","attributes":{},"value":[5]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["chunk_output_type"]}},"value":[{"type":"character","attributes":{},"value":["console"]}]},{"type":"character","attributes":{},"value":["2022-02-21"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"NULL"}
+  {"type":"character","attributes":{},"value":["wine_files/anchor-4.2.2/anchor.min.js","wine_files/bowser-1.9.3/bowser.min.js","wine_files/distill-2.2.21/template.v2.js","wine_files/figure-html5/unnamed-chunk-2-1.png","wine_files/figure-html5/unnamed-chunk-3-1.png","wine_files/figure-html5/unnamed-chunk-4-1.png","wine_files/figure-html5/unnamed-chunk-6-1.png","wine_files/figure-html5/unnamed-chunk-7-1.png","wine_files/figure-html5/unnamed-chunk-8-1.png","wine_files/header-attrs-2.11/header-attrs.js","wine_files/jquery-3.6.0/jquery-3.6.0.js","wine_files/jquery-3.6.0/jquery-3.6.0.min.js","wine_files/jquery-3.6.0/jquery-3.6.0.min.map","wine_files/popper-2.6.0/popper.min.js","wine_files/tippy-6.2.7/tippy-bundle.umd.min.js","wine_files/tippy-6.2.7/tippy-light-border.css","wine_files/tippy-6.2.7/tippy.css","wine_files/tippy-6.2.7/tippy.umd.min.js","wine_files/webcomponents-2.0.0/webcomponents.js","wine.jpg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2399,7 +2399,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Quantifying the Collapse of Civilization","description":"A look into the number mania that drives climate science and leads to inaction.","authors":[{"author":"Trevor Maggart","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-01-15T00:00:00.000-08:00","citationText":"Maggart, 2022"}
+{"title":"Uncovering the secrets of wine: using principal components analysis to visualize predictors of wine quality","description":"This post uses principal components analysis to explore what predictor variables affect wine quality.","authors":[{"author":"Trevor Maggart","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-02-21T00:00:00.000-08:00","citationText":"Maggart, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2424,31 +2424,89 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Quantifying the Collapse of Civilization</h1>
+<h1>Uncovering the secrets of wine: using principal components analysis to visualize predictors of wine quality</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>A look into the number mania that drives climate science and leads to inaction.</p></p>
+<p><p>This post uses principal components analysis to explore what predictor variables affect wine quality.</p></p>
 </div>
 
 <div class="d-byline">
-  Trevor Maggart true 
   
-<br/>2022-01-15
+  Trevor Maggart
+  
+<br/>2022-02-21
 </div>
 
 <div class="d-article">
-<p>When environmental activist and academic Naomi Klein was asked to speak at a tribute to the late, great professor Edward Said, she artfully critiqued the incompetency of Western Society’s ability to address the climate crisis. With the tactful characteristic of someone intimately aware of another’s work, Klein adopted Said’s postcolonial theory of the “other” and used it to expose the failings of Western exceptionalism that were so blatantly on display at the 2015 Paris Climate Conference. “The Paris Agreement commits to keeping warming below 2 C,” she reminded, adding, “it’s a target that is beyond reckless.” (Klein, 2016). And she was right. The African delegates at the conference protested, eventually receiving a simple pity clause that emphasized countries (primarily white and Western) will pursue “efforts to limit the temperature increase to 1.5 C” as Klein pointed out (Klein, 2016).</p>
-<p>Of course, the vast majority of these countries had no plan to actually execute this agreement. As watchdog Climate Action Tracker (CAT) recently reported, not a single G20 country is on pace to uphold its end of the bargain (Kottasov , 2021). Yet, even if they were, it is still worth a closer examination of all that is left unsaid within that 0.5 C differential ‘recommended’ in the agreement.</p>
-<p>To many, the climate crisis cannot simply be reduced to numerical modeling. Behind the constant barrage of statistics advertised to us, there are complex ecosystems on the brink of extinction; trees old enough to have lived through a hundred wars waiting to be reduced to a suburban household centerpiece; and entire cultures on the verge of being relegated to a brief paragraph in an obscure graduate textbook—assuming academia survives the changes to come. There is, simply, an interconnectedness within our world that even the most sophisticated scientific instruments will certainly never be able to measure. So, how did we arrive at this moment in time? What caused us to resign ourselves to a sort of number mania? A friend of mine theorizes it’s about control. By quantifying the natural world around us, we hide ourselves behind a facade of understanding and are therefore able to assuage our anxieties—anxieties that manifest due to an uncertainty about the future. But what does it mean for the Earth to heat 2 C? How about 3 C? Or even 5 C? According to the infinite infographics that are reposted into oblivion until the already oversimplified messages are lost all together: it could be the difference between uncomfortably hot summers or mass death.</p>
-<p>I am sure you can picture it as you scroll through Instagram: So You Want to Talk About the oncoming collapse of civilization brought on by our fragile democratic structures, increased water scarcity, crop failure, and the rise of police surveillance reminiscent of 1930s Germany? The irony here, of course, is that no one does. When the laptops are shut and the phones locked, those brave enough to unplug will hear in the stark silence the reverberations of beer bottles clanking, pill bottles being popped, and coffee machines sputtering out the remaining drops of hot liquid. The others are resigned to a worse fate: endless stimulation among the soft thuds of downward flicks resulting in the same four words: “You’re All Caught Up.”</p>
-<p>And yet, even within this almost manufactured indifference toward a crisis that appears to us on all fronts, there remains hope. Many hear the ubiquitous phrase “71% of carbon emissions are caused by 100 companies,” and choose to take action amidst those who resign themselves to a state of despair. You need not look farther than the monumental rise of the Sunrise Movement to see the powerful impact created by younger generations demanding change. These youths know the power to create change lies within people and the relationships that bind them together.</p>
-<p>Moreover, this obsession with emissions might be the most insidious numerical trap of all. It is easy to see how entire populations are brainwashed into believing global warming is fake when they are constantly being barraged with incomprehensible figures. But, take the most ardent climate-denying hunter to the desolate forests they roamed as a child and even they may admit something must be done.</p>
-<p>So it is here, ironically, where the truth lies—within the old adage lingering in the background: think global, act local. If we hope to preserve the future, we must first and foremost think of our relationships with each other and with the land. No amount of numerical data will convince the disenchanted to take a stand, but show them what contaminates their children’s drinking water and see a fire light in their eyes. We cannot quantify the impact of a million small actions taken on multiple fronts, but a million small actions is exactly what we need to move toward a better world.</p>
-<p>Works Cited</p>
-<ol type="1">
-<li><p>Klein, N. (2016, June). Let Them Drown: The Violence of Othering in a Warming World. London Review of Books. <a href="https://www.lrb.co.uk/the-paper/v38/n11/naomi-klein/let-them-drown" class="uri">https://www.lrb.co.uk/the-paper/v38/n11/naomi-klein/let-them-drown</a></p></li>
-<li><p>Kottasov , I. (2021, September 16). Not a single G20 country is in line with the Paris Agreement on climate, analysis shows. CNN. <a href="https://edition.cnn.com/2021/09/15/world/climate-pledges-insufficient-cat-intl/index.html" class="uri">https://edition.cnn.com/2021/09/15/world/climate-pledges-insufficient-cat-intl/index.html</a></p></li>
-</ol>
+<br>
+<center>
+<img src="wine.jpg" style="width:100.0%" />
+</center>
+<center>
+<strong><em>Coll de Roses, a wine estate in Spain with 98 acres of vines // CHRISTIE’S INTERNATIONAL REAL ESTATE</em></strong>
+</center>
+<p><br></p>
+<h2 id="a-versatile-beverage">A versatile beverage</h2>
+<p>Wine is a versatile beverage that is consumed across the globe. This analysis looks at what factors influence “high quality” wine as rated by experts. To accomplish this, the analysis below uses <strong>principal components analysis</strong> (PCA) to explore the relationships between predictor variables and quality. The data includes variables such as concentration of alcohol, sulfur, phosphates, chlorides, citric acid, and more. Moreover, this analysis is applied to both red and white wine, and the results are compared to see if there are different predictor variables leading to higher quality between the two varieties.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h2 class="tabset tabset-fade" id="red-wine-analysis">Red wine analysis</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="pca-biplot-1-2">PCA biplot: 1 &amp; 2</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="wine_files/figure-html5/unnamed-chunk-2-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<center>
+<strong>Figure 1a.</strong> Visualization of principal components 1 &amp; 2 for the red wine data. Graphic shows little interaction between variables such as sulfur dioxide and pH. Sulfur-related predictors significantly influence PC2, while acidity, sulphates and pH have strong effects on PC1. We can see sulfur content has the opposite effect on PC2 compared to alcohol and wine quality.
+</center>
+<h3 id="pca-biplot-3-4">PCA biplot: 3 &amp; 4</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="wine_files/figure-html5/unnamed-chunk-3-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<center>
+<strong>Figure 1b.</strong> Visualization of principal components 3 &amp; 4 for the red wine data. Graphic shows little interaction between variables such as sulfur dioxide and chlorides. Sulfur-related predictors significantly influence PC3, while chlorides, and sulphates (less so) have strong effects on PC4. Variables such as quality have little to no influence on these components.
+</center>
+<h3 id="screeplot">Screeplot</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="wine_files/figure-html5/unnamed-chunk-4-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<center>
+<strong>Figure 1c.</strong> Screeplot for the red wine data. We can see PC1 accounts for 26% of variance, while PC2 accounts for approximately 19%. After PC5, the remaining components tend to account for ~5% variance or less.
+</center>
+<h2 class="tabset tabset-fade" id="white-wine-analysis">White wine analysis</h2>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
+<h3 id="pca-biplot-1-2-1">PCA biplot: 1 &amp; 2</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="wine_files/figure-html5/unnamed-chunk-6-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<center>
+<strong>Figure 2a.</strong> Visualization of principal components 1 &amp; 2 for the white wine data. Graphic shows little interaction between variables such as alcohol and pH. Alcohol, density, and sugar significantly influence PC1, while pH, and fixed acidity have strong effects on PC1. We can see fixed acidity has the opposite effect on on the components compared to pH.
+</center>
+<h3 id="pca-biplot-3-4-1">PCA biplot: 3 &amp; 4</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="wine_files/figure-html5/unnamed-chunk-7-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<center>
+<strong>Figure 2b.</strong> Visualization of principal components 3 &amp; 4 for the white wine data. Graphic shows little interaction between variables such as chlorides and volatile acidity. Most variables effect both components, with volatile acidity influencing PC3 the most, while chlorides and sulphates appear to influence PC4 the most.
+</center>
+<h3 id="screeplot-1">Screeplot</h3>
+<div class="layout-chunk" data-layout="l-body">
+<p><img src="wine_files/figure-html5/unnamed-chunk-8-1.png" width="624" style="display: block; margin: auto;" /></p>
+</div>
+<center>
+<strong>Figure 1c.</strong> Screeplot for the white wine data. We can see PC1 accounts for ~28% of variance, while PC2 accounts for approximately 13%. After PC9, the remaining components tend to account for ~3% variance or less.
+</center>
+<h2 id="summary-of-findings">Summary of findings</h2>
+<p>Comparing the two subsets it is interesting to see that sulfur-related variables had the opposite effect on wine quality for the red wine, but this trend did not hold for the white wine. Moreover, the red wine screeplot (Figure 1c) had a greater variance distribution across components than the white wine screeplot (Figure 3c). After PC1, there is a sharp drop off in variance explained for the white wine subset.</p>
+<p>It would be interesting to run additional analyses on this dataset, or to run PCA on a dataset for beer to see what factors influence beer ‘quality’.</p>
+<h4 id="data-citation">Data Citation:</h4>
+<p>P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.</p>
+<p><strong>Relevant Paper</strong>: P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis. Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
