@@ -1,0 +1,350 @@
+---
+title: "Insight into the NBA: examining team & player similarities through cluster analysis"
+description: |
+  This post uses hierarchical agglomerative clustering to explore similarities across NBA teams. 
+author: "Trevor Maggart"
+output:
+  distill::distill_article:
+    self_contained: false
+  html_document:
+    code_folding: hide
+    theme: postcards.css
+    toc: yes
+    toc_depth: 5
+    toc_float: yes
+    collapsed: yes
+    smooth_scroll: yes
+editor_options: 
+  chunk_output_type: console
+date: 2022-02-21
+---
+<br>
+<center>![](nba.jpg){width=70%}</center>
+
+<center>***John Fisher/Getty Images***</center>
+<br>
+
+```{r setup, include=FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.align='center')
+
+library(tidyverse)
+library(janitor)
+library(here)
+# Packages for cluster analysis:
+library(NbClust)
+library(cluster)
+library(factoextra)
+library(dendextend)
+library(ggdendro)
+library(stringr)
+```
+
+## Ball is life
+
+Basketball is constantly evolving. Where the big man once dominated the post, today the game is dominated by efficient 3-point shooting. Yet still, players like Giannis Antentokounmpo show the game can still be changed. 
+
+Below I use **hierarchical agglomerative clustering (HAC)** to find similarities across NBA teams, as well as the top 30 players based on minutes played per game. To determine these clusters, I use the following *per game* parameters: `age`, field goals made (`fg`), field goals attempted (`fga`), three-pointers made (`x3p`), three-pointers attempted (`x3pa`), two-pointers made (`x2p`), two-pointers attempted (`x2pa`), free throws made (`ft`), free throws attempted (`fta`), offensive rebounds (`orb`), defensive rebounds (`drb`), assists (`ast`), steals (`stl`), blocks (`blk`), turnovers (`trv`), personal fouls (`pf`), and points (`pts`).
+
+The data was downloaded from Kaggle and scraped by user Vivo Vinco from Basketball Reference (https://www.basketball-reference.com/leagues/NBA_2022_per_game.html). 
+
+```{r data team}
+# Read in the 'water chemistry' data
+nba_teams <- read_csv(here('nba.csv')) %>% 
+  clean_names() %>% # convert to lowercase 
+  select(-rk,-player,-g,-gs,-mp,-pos,-fg_percent,-x3p_percent,-x2p_percent,-ft_percent,-e_fg_percent,-trb) %>%
+  na_if(-999)
+
+# Create a summary dataframe
+nba_teams_sum <- nba_teams %>% 
+  group_by(tm) %>% 
+  summarize(age_mean = mean(age, na.rm = T),
+            fg_mean = mean(fg, na.rm = T),
+            fga_mean = mean(fga, na.rm = T),
+            x3p_mean = mean(x3p, na.rm = T),
+            x3pa_mean = mean(x3pa, na.rm = T),
+            x2p_mean = mean(x2p, na.rm = T),
+            x2pa_mean = mean(x2pa, na.rm = T),
+            orb_mean = mean(orb, na.rm = T),
+            ft_mean = mean(ft, na.rm = T),
+            fta_mean = mean(fta, na.rm = T),
+            drb_mean = mean(drb, na.rm = T),
+            ast_mean = mean(ast, na.rm = T),
+            stl_mean = mean(stl, na.rm = T),
+            blk_mean = mean(blk, na.rm = T),
+            tov_mean = mean(tov, na.rm = T),
+            pf_mean = mean(pf, na.rm = T),
+            pts_mean = mean(pts, na.rm = T)) 
+
+nba_teams_scale <- nba_teams_sum %>% 
+  select(-tm) %>% 
+  scale()
+
+rownames(nba_teams_scale) <- nba_teams_sum$tm
+```
+
+## Team Analysis {.tabset .tabset-fade}
+
+The following analysis will use **hierarchical agglomerative clustering (HAC)** to determine clusters for teams in the NBA. Clustering will be based on **euclidean distance** measurements. Both a complete linkage and single linkage dendrogram will be presented, as well as a subsequent tanglegram to compare the two. 
+
+### Complete Linkage Dendrogram
+```{r}
+# Calculating the Euclidian matrix
+nba_teams_dist <- dist(nba_teams_scale, method = 'euclidean') 
+
+# Hierarchical clustering (complete linkage)
+nba_teams_hc_complete <- hclust(nba_teams_dist, method = "complete")
+
+# converting to a dendrogram
+nba_teams_hc_complete %>% 
+  as.dendrogram() -> nba_teams_hc_dend_complete # Store as dendrogram
+
+# Visualizing the complete linkage dendrogram
+nba_teams_hc_dend_complete %>%  
+  set("labels_col", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400"), k=4) %>%
+  set("branches_k_color", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400"), k = 4) %>%
+  set("branches_lwd", 3) %>% 
+  plot(horiz=FALSE, axes=TRUE)
+abline(v = 350, lty = 5)
+```
+<center>**Figure 1a.** A complete linkage dendrogram visualizing hierarchical agglomerative clustering based on euclidean distance measurements. The graphic shows clustering results for all 32 NBA teams. Multivariate clusters are ordered by color. Y-axis represents distance and x-axis represents NBA teams.</center> 
+
+### Single Linkage Dendrogram
+```{r}
+# Hierarchical clustering (single linkage)
+nba_teams_hc_single <- hclust(nba_teams_dist, method = "single" )
+
+# converting to a dendrogram
+nba_teams_hc_single %>% 
+  as.dendrogram() -> nba_teams_hc_dend_single # Store as dendrogram
+
+# Visualizing the complete linkage dendrogram
+nba_teams_hc_dend_single %>%  
+  set("labels_col", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400","#bce954", "indianred"), k=6) %>%
+  set("branches_k_color", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400","#bce954","indianred"), k = 6) %>%
+  set("branches_lwd", 3) %>% 
+  plot(horiz=FALSE, axes=TRUE)
+abline(v = 350, lty = 5)
+```
+<center>**Figure 1b.** A single linkage dendrogram visualizing hierarchical agglomerative clustering based on euclidean distance measurements. The graphic shows clustering results for all 32 NBA teams. Multivariate clusters are ordered by color. Six clusters are shown, but more a present. Y-axis represents distance and x-axis represents NBA teams.</center> 
+
+### Tanglegram
+```{r}
+dendlist(nba_teams_hc_dend_complete, nba_teams_hc_dend_single) %>%
+  untangle(method = "step1side") %>% # Find the best alignment layout
+  tanglegram(common_subtrees_color_branches = TRUE, lwd = 2.0, edge.lwd = 2.5) # Adjust the aesthetics
+
+```
+<center>**Figure 1c.** A tanglegram visualizing the relationship between the complete linkage and single linkage dendrograms. Similar cluster results are tied together with lines. Strong clusters are emphasized with color.</center>
+
+```{r data player}
+# Read in the 'water chemistry' data
+nba_player <- read_csv(here('nba.csv')) %>% 
+  clean_names() %>% # convert to lowercase 
+  select(-rk,-tm,-g,-gs,-pos,-fg_percent,-x3p_percent,-x2p_percent,-ft_percent,-e_fg_percent,-trb) %>%
+  na_if(-999) %>% 
+  slice_max(order_by = mp, n = 30) %>% 
+  select(-mp)
+
+# Create a summary dataframe
+nba_player_sum <- nba_player %>% 
+  group_by(player) %>% 
+  summarize(age_mean = mean(age, na.rm = T),
+            fg_mean = mean(fg, na.rm = T),
+            fga_mean = mean(fga, na.rm = T),
+            x3p_mean = mean(x3p, na.rm = T),
+            x3pa_mean = mean(x3pa, na.rm = T),
+            x2p_mean = mean(x2p, na.rm = T),
+            x2pa_mean = mean(x2pa, na.rm = T),
+            orb_mean = mean(orb, na.rm = T),
+            ft_mean = mean(ft, na.rm = T),
+            fta_mean = mean(fta, na.rm = T),
+            drb_mean = mean(drb, na.rm = T),
+            ast_mean = mean(ast, na.rm = T),
+            stl_mean = mean(stl, na.rm = T),
+            blk_mean = mean(blk, na.rm = T),
+            tov_mean = mean(tov, na.rm = T),
+            pf_mean = mean(pf, na.rm = T),
+            pts_mean = mean(pts, na.rm = T)) 
+
+nba_player_scale <- nba_player_sum %>% 
+  select(-player) %>% 
+  scale()
+
+rownames(nba_player_scale) <- nba_player_sum$player
+```
+
+## Player Analysis (top 30 players by minutes played) {.tabset .tabset-fade}
+
+The following analysis will use **hierarchical agglomerative clustering (HAC)** to determine clusters for the top 30 players in the NBA by average minutes played per game. Clustering will be based on **euclidean distance** measurements. Both a complete linkage and single linkage dendrogram will be presented, as well as a subsequent tanglegram to compare the two. 
+
+### Complete Linkage Dendrogram
+```{r}
+# Calculating the Euclidian matrix
+nba_player_dist <- dist(nba_player_scale, method = 'euclidean') 
+
+# Hierarchical clustering (complete linkage)
+nba_player_hc_complete <- hclust(nba_player_dist, method = "complete")
+
+# converting to a dendrogram
+nba_player_hc_complete %>% 
+  as.dendrogram() -> nba_player_hc_dend_complete # Store as dendrogram
+
+# Visualizing the complete linkage dendrogram
+nba_player_hc_dend_complete %>%  
+  set("labels_col", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400"), k=4) %>%
+  set("branches_k_color", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400"), k = 4) %>%
+  set("branches_lwd", 3) %>% 
+  set("labels_cex", 0.7) %>% 
+  plot(horiz=FALSE, axes=TRUE)
+abline(v = 350, lty = 5)
+```
+<center>**Figure 2a.** A complete linkage dendrogram visualizing hierarchical agglomerative clustering based on euclidean distance measurements. The graphic shows clustering results for the top 30 players by average minutes played per game. Multivariate clusters are ordered by color. Y-axis represents distance and the x-axis represents players.</center>
+
+### Single Linkage Dendrogram
+```{r}
+# Hierarchical clustering (single linkage)
+nba_player_hc_single <- hclust(nba_player_dist, method = "single" )
+
+# converting to a dendrogram
+nba_player_hc_single %>% 
+  as.dendrogram() -> nba_player_hc_dend_single # Store as dendrogram
+
+# Visualizing the complete linkage dendrogram
+nba_player_hc_dend_single %>%  
+  set("labels_col", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400","#bce954", "indianred"), k=6) %>%
+  set("branches_k_color", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400","#bce954","indianred"), k = 6) %>%
+  set("branches_lwd", 3) %>% 
+  set("labels_cex", 0.7) %>% 
+  plot(horiz=FALSE, axes=TRUE)
+abline(v = 350, lty = 5)
+```
+<center>**Figure 2b.** A single linkage dendrogram visualizing hierarchical agglomerative clustering based on euclidean distance measurements. The graphic shows clustering results for the top 30 players by average minutes played per game. Multivariate clusters are ordered by color. Six clusters are shown, but more a present. Y-axis represents distance and the x-axis represents player.</center>
+
+### Tanglegram
+```{r}
+# Convert to class dendrogram
+dend_complete_p <- as.dendrogram(nba_player_hc_complete) # Complete linkage
+dend_simple_p <- as.dendrogram(nba_player_hc_single) # Single linkage
+
+# Align and plot two dendrograms side by side
+dendlist(dend_complete_p, dend_simple_p) %>%
+  untangle(method = "step1side") %>% # Find the best alignment layout
+  tanglegram(common_subtrees_color_branches = TRUE, # Adjust the aesthetics
+             lwd = 2.0, edge.lwd = 2.5, 
+             margin_inner = 8) 
+
+```
+<center>**Figure 2c.** A tanglegram visualizing the relationship between the complete linkage and single linkage dendrograms. Similar cluster results are tied together with lines. Strong clusters are emphasized with color.</center>
+
+```{r data player pts}
+# Read in the 'water chemistry' data
+nba_player_pts <- read_csv(here('nba.csv')) %>% 
+  clean_names() %>% # convert to lowercase 
+  select(-rk,-tm,-g,-gs,-pos,-fg_percent,-x3p_percent,-x2p_percent,-ft_percent,-e_fg_percent,-trb) %>%
+  na_if(-999) %>% 
+  slice_max(order_by = pts, n = 30) %>% 
+  select(-mp)
+
+# Create a summary dataframe
+nba_player_pts_sum <- nba_player_pts %>% 
+  group_by(player) %>% 
+  summarize(age_mean = mean(age, na.rm = T),
+            fg_mean = mean(fg, na.rm = T),
+            fga_mean = mean(fga, na.rm = T),
+            x3p_mean = mean(x3p, na.rm = T),
+            x3pa_mean = mean(x3pa, na.rm = T),
+            x2p_mean = mean(x2p, na.rm = T),
+            x2pa_mean = mean(x2pa, na.rm = T),
+            orb_mean = mean(orb, na.rm = T),
+            ft_mean = mean(ft, na.rm = T),
+            fta_mean = mean(fta, na.rm = T),
+            drb_mean = mean(drb, na.rm = T),
+            ast_mean = mean(ast, na.rm = T),
+            stl_mean = mean(stl, na.rm = T),
+            blk_mean = mean(blk, na.rm = T),
+            tov_mean = mean(tov, na.rm = T),
+            pf_mean = mean(pf, na.rm = T),
+            pts_mean = mean(pts, na.rm = T)) 
+
+nba_player_pts_scale <- nba_player_pts_sum %>% 
+  select(-player) %>% 
+  scale()
+
+rownames(nba_player_pts_scale) <- nba_player_pts_sum$player
+```
+
+## Player Analysis (top 30 players by points per game) {.tabset .tabset-fade}
+
+The following analysis will use **hierarchical agglomerative clustering (HAC)** to determine clusters for the top 30 players in the NBA by average points per game. Clustering will be based on **euclidean distance** measurements. Both a complete linkage and single linkage dendrogram will be presented, as well as a subsequent tanglegram to compare the two. 
+
+### Complete Linkage Dendrogram
+```{r}
+# Calculating the Euclidian matrix
+nba_player_pts_dist <- dist(nba_player_pts_scale, method = 'euclidean') 
+
+# Hierarchical clustering (complete linkage)
+nba_player_pts_hc_complete <- hclust(nba_player_pts_dist, method = "complete")
+
+# converting to a dendrogram
+nba_player_pts_hc_complete %>% 
+  as.dendrogram() -> nba_player_pts_hc_dend_complete # Store as dendrogram
+
+# Visualizing the complete linkage dendrogram
+nba_player_pts_hc_dend_complete %>%  
+  set("labels_col", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400"), k=4) %>%
+  set("branches_k_color", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400"), k = 4) %>%
+  set("branches_lwd", 3) %>% 
+  set("labels_cex", 0.7) %>% 
+  plot(horiz=FALSE, axes=TRUE)
+abline(v = 350, lty = 5)
+```
+<center>**Figure 3a.** A single linkage dendrogram visualizing hierarchical agglomerative clustering based on euclidean distance measurements. The graphic shows clustering results for the top 30 players average points scored per game. Multivariate clusters are ordered by color. Y-axis represents distance and the x-axis represents players.</center>
+
+### Single Linkage Dendrogram
+```{r}
+# Hierarchical clustering (single linkage)
+nba_player_pts_hc_single <- hclust(nba_player_pts_dist, method = "single" )
+
+# converting to a dendrogram
+nba_player_pts_hc_single %>% 
+  as.dendrogram() -> nba_player_pts_hc_dend_single # Store as dendrogram
+
+# Visualizing the complete linkage dendrogram
+nba_player_pts_hc_dend_single %>%  
+  set("labels_col", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400","#bce954", "indianred"), k=6) %>%
+  set("branches_k_color", value = c("#3d85c6", "#29be8a", "#e5e544","#ff8400","#bce954","indianred"), k = 6) %>%
+  set("branches_lwd", 3) %>% 
+  set("labels_cex", 0.7) %>% 
+  plot(horiz=FALSE, axes=TRUE)
+abline(v = 350, lty = 5)
+```
+<center>**Figure 3b.** A single linkage dendrogram visualizing hierarchical agglomerative clustering based on euclidean distance measurements. The graphic shows clustering results for the top 30 players average points scored per game. Multivariate clusters are ordered by color. Six clusters are shown, but more a present. Y-axis represents distance and the x-axis represents player.</center>
+
+### Tanglegram
+```{r}
+# Convert to class dendrogram
+dend_complete_p_pts <- as.dendrogram(nba_player_pts_hc_complete) # Complete linkage
+dend_simple_p_pts <- as.dendrogram(nba_player_pts_hc_single) # Single linkage
+
+# Align and plot two dendrograms side by side
+dendlist(dend_complete_p_pts, dend_simple_p_pts) %>%
+  untangle(method = "step1side") %>% # Find the best alignment layout
+  tanglegram(common_subtrees_color_branches = TRUE, # Adjust the aesthetics
+             lwd = 2.0, edge.lwd = 2.5, 
+             margin_inner = 10) 
+```
+<center>**Figure 3c.** A tanglegram visualizing the relationship between the complete linkage and single linkage dendrograms. Similar cluster results are tied together with lines. Strong clusters are emphasized with color.</center> 
+
+##
+### Analysis
+
+The **hierarchical agglomerative clustering** produced some interesting observations. Given the complexity of finding similarities between diverse teams, it is hard to glean clear findings from the team analysis. In contrast, there are much clearer clusters in the player analysis. 
+
+Looking at the players by points we see interesting results. Grouped together we see athletic big men like Joel Embiid and Giannis Antentokounmpo, 25 year old shooting guards Devin Booker and Jaylen Brown, high scoring veteran players DeMar DeRozan and Kevin Durant, and all around young guys Luka Doncic and Trae Young. In the latter example, we can see they have similar ages (22 and 23), shooting percentages, assists (9.4 and 8.9), and more.
+
+At higher distances (~6) we can see larger trends such as high rebound players (cluster includes Joel Embiid, Giannis Antentokounmpo, Nikoa Jokic, etc.). Further research could include additional data on physical characteristics of players: height, wingspan, vertical jump height, etc. 
+
+#### Data Citation:
+Basketball Reference. (n.d.). 2021-22 NBA player stats: Per game. Basketball Reference. Retrieved February 17, 2022, from https://www.basketball-reference.com/leagues/NBA_2022_per_game.html 
+
+Scraped by: Kaggle user Vivo Vinco
